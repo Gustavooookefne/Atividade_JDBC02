@@ -6,7 +6,7 @@ public class Fornecedor {
     private String unidade;
     private String estoque;
 
-    public Fornecedor(int id ,String nome ,String unicade ,String estoque){
+    public Fornecedor(int id ,String nome ,String unidade ,String estoque){
         this.id = id;
         this.nome = nome;
         this.unidade = unidade;
