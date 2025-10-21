@@ -40,4 +40,8 @@ public class NotaEntrada {
     public void setDataEntrega(String dataEntrega) {
         this.dataEntrega = dataEntrega;
     }
+
+    public NotaEntradaItem[] getItens() {
+        return new NotaEntradaItem[0];
+    }
 }
