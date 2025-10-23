@@ -15,6 +15,9 @@ public class FornecedorDao {
                     WHERE cnpj = ?
                     """;
             try(Connetion conn = Conexao.conectar();
-            )
+            PreparedStatement stmt = conn.prepareStatement(query)){
+                stmt.setString(1,fornecedor.getNome());
+                stmt.setString(2,fornecedor.getCnpj());
+            }
     }
 }
