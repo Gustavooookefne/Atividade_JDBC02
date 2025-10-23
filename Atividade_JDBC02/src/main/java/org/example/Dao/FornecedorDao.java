@@ -18,6 +18,13 @@ public class FornecedorDao {
             PreparedStatement stmt = conn.prepareStatement(query)){
                 stmt.setString(1,fornecedor.getNome());
                 stmt.setString(2,fornecedor.getCnpj());
+                stmt.excuteQuery();
+
+                if(rs.next()){
+                    return true;
+                }
             }
+
+            return false;
     }
 }
