@@ -27,4 +27,21 @@ public class FornecedorDao {
 
             return false;
     }
+    public void insertFornecedor(Fornecedor fornecedor)throws SQLException{
+            String query = """
+                    INSERT INTO
+                    Fornecedor
+                    (nome, cnpj)
+                    VALUES
+                    (?,?)
+                    """;
+
+            try(Connection conn = Conexao.conectar();
+            PreparedSatement stmt = conn.prepareStatement(query)){
+                stmt.setString(1,fornecedor.getNome());
+                stmt.setString(2,fornecedor.getCnpj());
+
+                stmt.
+            }
+    }
 }
