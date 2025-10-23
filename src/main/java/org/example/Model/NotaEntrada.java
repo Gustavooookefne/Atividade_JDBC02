@@ -41,7 +41,5 @@ public class NotaEntrada {
         this.dataEntrega = dataEntrega;
     }
 
-    public NotaEntradaItem[] getItens() {
-        return new NotaEntradaItem[0];
-    }
+
 }

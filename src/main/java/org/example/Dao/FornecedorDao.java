@@ -1,47 +1,27 @@
 package org.example.Dao;
 
 import org.example.Infra.Conexao;
-import org.example.Model.Fornecedor;
+import org.example.Model.Material;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class FornecedorDao {
-        public boolean cnpj (String cnpj) throws SQLException{
-            String query = """
-                    SELECT cnpj
-                    FROM Fornecedor
-                    WHERE cnpj = ?
-                    """;
-            try(Connetion conn = Conexao.conectar();
+    public static void inserirMaterial(Material material)throws SQLException{
+        String query = """
+                INSERT INTO material
+                (nome , cnpj) VALUES (?,?)
+                """;
+
+        try(Connection conn = Conexao.getConnection();
             PreparedStatement stmt = conn.prepareStatement(query)){
-                stmt.setString(1,fornecedor.getNome());
-                stmt.setString(2,fornecedor.getCnpj());
-                stmt.excuteQuery();
+            stmt.setString(1, material.getNome());
+            stmt.setString(2,material.getCnpj());
+            stmt.executeUpdate();
 
-                if(rs.next()){
-                    return true;
-                }
-            }
-
-            return false;
+        }
     }
-    public void insertFornecedor(Fornecedor fornecedor)throws SQLException{
-            String query = """
-                    INSERT INTO
-                    Fornecedor
-                    (nome, cnpj)
-                    VALUES
-                    (?,?)
-                    """;
 
-            try(Connection conn = Conexao.conectar();
-            PreparedSatement stmt = conn.prepareStatement(query)){
-                stmt.setString(1,fornecedor.getNome());
-                stmt.setString(2,fornecedor.getCnpj());
 
-                stmt.
-            }
-    }
 }
