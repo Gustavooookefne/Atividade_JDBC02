@@ -8,6 +8,7 @@ import java.util.List;
 
 public class NotaEntradaDao{
     public void MostrarNotasEntradas(NotaEntrada notaEntrada)throws SQLException{
-        String query
+        String query = """
+                """;
     }
 }
